@@ -16,15 +16,21 @@
 
 ### Repository Setup
 
-1. **Fork or clone this repository**
-   ```
-   git clone https://github.com/eval-protocol/github-action-rollout-processor-hello-world.git
+1. **Fork this repository** to your GitHub account, then clone your fork:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/github-action-rollout-processor-hello-world.git
+   cd github-action-rollout-processor-hello-world
    ```
 
-2. **Set up [secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#creating-secrets-for-a-repository)** in your repo:
+2. **Update the repository configuration** in `quickstart.py`:
+   ```python
+   rollout_processor=GithubActionRolloutProcessor(
+       owner="YOUR-USERNAME",  # Change this to your GitHub username
+       repo="github-action-rollout-processor-hello-world",
+       # ... rest of configuration
+   )
    ```
-   FIREWORKS_API_KEY="your_fireworks_key"
-   ```
+
 3. **Set up your local environment**:
    
    For the GitHub token, create a [Personal Access Token (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) with permissions for `repo` and `workflow`.
