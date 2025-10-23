@@ -43,4 +43,5 @@ jobs:
           python rollout_worker.py \
             --completion-params '${{ inputs.completion_params }}' \
             --metadata '${{ inputs.metadata }}' \
-            --model-base-url "${{ inputs.model_base_url }}"
+            --model-base-url "${{ inputs.model_base_url }}" \
+            --api-key "${{ secrets.FIREWORKS_API_KEY }}"
