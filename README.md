@@ -21,12 +21,6 @@
 
 ## Quick Start
 
-### Installation
-
-```bash
-pip install eval-protocol
-```
-
 ### Repository Setup
 
 1. **Fork or create this repository**
@@ -42,6 +36,12 @@ pip install eval-protocol
    export GITHUB_TOKEN="ghp_..."
    export FIREWORKS_API_KEY="your_fireworks_key"
    ```
+
+### Installation
+
+```bash
+pip install eval-protocol
+```
 
 ## Running the Example
 
