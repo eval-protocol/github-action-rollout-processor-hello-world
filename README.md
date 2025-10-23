@@ -10,13 +10,6 @@
 
 > **📖 New to GitHub Action Rollout Processing?** Read the complete [GitHub Actions Rollout Tutorial](https://evalprotocol.io/tutorial/github-actions-rollout) first - this repository serves as the working example for that tutorial.
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#quick-start"><strong>Quick Start</strong></a> ·
-  <a href="#running-the-example"><strong>Running the Example</strong></a> ·
-  <a href="#how-it-works"><strong>How It Works</strong></a>
-</p>
-
 <br/>
 
 ## Quick Start
