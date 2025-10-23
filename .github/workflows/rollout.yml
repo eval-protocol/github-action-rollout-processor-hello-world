@@ -1,0 +1,47 @@
+name: Eval Protocol Rollout
+
+run-name: rollout:${{ fromJSON(inputs.metadata).rollout_id }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      completion_params:
+        description: 'JSON completion params (optional, includes model_kwargs)'
+        required: true
+        type: string
+      metadata:
+        description: 'JSON serialized metadata object'
+        required: true
+        type: string
+      model_base_url:
+        description: 'Base URL for the model API'
+        required: true
+        type: string
+
+
+jobs:
+  rollout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run rollout script
+        env:
+          FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
+        run: |
+          python tests/github_actions/rollout_worker.py \
+            --completion-params '${{ inputs.completion_params }}' \
+            --metadata '${{ inputs.metadata }}' \
+            --model-base-url "${{ inputs.model_base_url }}"
