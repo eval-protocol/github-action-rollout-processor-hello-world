@@ -23,8 +23,12 @@
 
 ### Repository Setup
 
-1. **Fork or create this repository**
-2. **Set up repository secrets** in your forked repository settings:
+1. **Fork or clone this repository**
+   ```
+   git clone https://github.com/eval-protocol/github-action-rollout-processor-hello-world.git
+   ```
+
+2. **Set up [secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets#creating-secrets-for-a-repository)** in your repo:
    ```
    FIREWORKS_API_KEY="your_fireworks_key"
    ```
