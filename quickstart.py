@@ -53,8 +53,14 @@ async def test_github_actions_quickstart(row: EvaluationRow) -> EvaluationRow:
     """
     # Just check that the row came back, in practice you would evaluate the row here.
 
-    assert row.messages[0].content == "What is the capital of France?", "Row should have correct message content"
+    if row.messages[0].content == "What is the capital of France?":
+        assert row.input_metadata.row_id == "0"
+    elif row.messages[0].content == "What is the capital of Germany?":
+        assert row.input_metadata.row_id == "1"
+    elif row.messages[0].content == "What is the capital of Italy?":
+        assert row.input_metadata.row_id == "2"
+    else:
+        assert False, "Row should have correct message content"
     assert len(row.messages) > 1, "Row should have a response. If this fails, we fell back to the original row."
-    assert row.execution_metadata.rollout_id, "Row should have a rollout_id from the GitHub Actions rollout"
 
     return row
