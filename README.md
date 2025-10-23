@@ -29,8 +29,8 @@ pip install eval-protocol
 
 ### Repository Setup
 
-1. **Fork or create a repository** with the GitHub Actions workflow
-2. **Set up repository secrets** in your GitHub repository settings:
+1. **Fork or create this repository**
+2. **Set up repository secrets** in your forked repository settings:
    ```
    FIREWORKS_API_KEY="your_fireworks_key"
    ```
